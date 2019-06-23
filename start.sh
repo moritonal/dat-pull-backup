@@ -1,8 +1,5 @@
 #!/bin/sh
 
-if ! [ -d /backup/.dat ]
-then
-    dat clone $1 /backup
-fi
+dat clone $1 /tmp/dat
 
-dat pull --dir /backup --exit 5
+cp -rf /tmp/dat/** /backup
